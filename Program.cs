@@ -16,14 +16,16 @@ namespace DevChallenges
 
 
       public static bool CheckIfSameCase(string msg)
-      {
-         if (msg.Equals(msg.ToUpper()))
-            return true;
+            => msg == msg.ToUpper() || msg == msg.ToLower();
+      // The code below was my first attempt
+      //   {
+      //      if (msg.Equals(msg.ToUpper()))
+      //         return true;
 
-         if (msg.Equals(msg.ToLower()))
-            return true;
+      //      if (msg.Equals(msg.ToLower()))
+      //         return true;
 
-         return false;
-      }
+      //      return false;
+      //   }
    }
 }
