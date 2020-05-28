@@ -11,12 +11,35 @@ namespace DevChallenges
 
          //  var result = CheckIfSameCase("HeLLO");
 
-         var result = HackerSpeak("javascript is cool");
-         System.Console.WriteLine($"Answer: {result}");
-         result = HackerSpeak("programming is fun");
+         //  var result = HackerSpeak("javascript is cool");
+         //  System.Console.WriteLine($"Answer: {result}");
+         //  result = HackerSpeak("programming is fun");
+         //  System.Console.WriteLine($"Answer: {result}");
+
+         var result = DoubleLetters("javascript is cool");
          System.Console.WriteLine($"Answer: {result}");
       }
 
+      /*
+      Create a function that takes a word and returns true if the word has two consecutive identical letters.
+
+      Examples
+          DoubleLetters("loop") ➞ true
+          DoubleLetters("yummy") ➞ true
+          DoubleLetters("orange") ➞ false
+          DoubleLetters("munchkin") ➞ false
+      */
+      public static bool DoubleLetters(string msg)
+      {
+         char lastChar = ' ';
+         foreach (var c in msg.ToCharArray())
+         {
+            if (c == lastChar)
+               return true;
+            lastChar = c;
+         }
+         return false;
+      }
 
       /*
       Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string.
