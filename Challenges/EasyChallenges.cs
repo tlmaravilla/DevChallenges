@@ -1,11 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DevChallenges.Challenges
 {
     public class EasyChallenges
     {
+        /*
+         * Eliminate Odd Numbers within an Array
+         *
+         * Create a function that takes an array of numbers and returns only the even values.
+         *
+         * Examples
+            NoOdds([1, 2, 3, 4, 5, 6, 7, 8]) ➞ [2, 4, 6, 8]
+
+            NoOdds([43, 65, 23, 89, 53, 9, 6]) ➞ [6]
+
+            NoOdds([718, 991, 449, 644, 380, 440]) ➞ [718, 644, 380, 440]
+            Notes
+            Return all even numbers in the order they were given.
+            All test cases contain valid numbers ranging from 1 to 3000.
+         */
+        public static int[] EliminateOddNbrsInArray(int[] numbers) => numbers.Where(x => x % 2 == 0).ToArray();
+       
         /*
        Create a function that takes a word and returns true if the word has two consecutive identical letters.
 
