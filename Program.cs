@@ -1,25 +1,25 @@
-﻿using System;
-using System.Linq;
-using DevChallenges.Challenges;
+﻿using DevChallenges.Challenges;
 using DevChallenges.Sandbox;
+using System;
 
 namespace DevChallenges
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Dev Challenge in 3 2 1, GO!");
 
+            //Easy();
 
-            Easy();
+            Medium();
 
-            CSharp8Playground();
+            //CSharp8Playground();
 
             Console.ReadLine();
         }
 
-        static void Easy()
+        private static void Easy()
         {
             Console.WriteLine("Starting EASY Challenges in 3 2 1, GO!");
 
@@ -35,7 +35,7 @@ namespace DevChallenges
             var hasDoubleLetters = EasyChallenges.DoubleLetters("javascript is cool");
             Console.WriteLine($"Answer: {hasDoubleLetters}");
 
-            var evenArray = EasyChallenges.EliminateOddNbrsInArray(new[]{1, 2, 3, 4, 5, 6, 7, 8});
+            var evenArray = EasyChallenges.EliminateOddNbrsInArray(new[] { 1, 2, 3, 4, 5, 6, 7, 8 });
             Console.WriteLine($"Answer: {string.Join(",", evenArray)}");
 
             evenArray = EasyChallenges.EliminateOddNbrsInArray(new[] { 43, 65, 23, 89, 53, 9, 6 });
@@ -44,13 +44,20 @@ namespace DevChallenges
             evenArray = EasyChallenges.EliminateOddNbrsInArray(new[] { 718, 991, 449, 644, 380, 440 });
             Console.WriteLine($"Answer: {string.Join(",", evenArray)}");
 
-            
+            Console.ReadLine();
+        }
 
+        private static void Medium()
+        {
+            Console.WriteLine("Starting MEDIUM Challenges in 3 2 1, GO!");
+
+            var result = MediumChallenges.ArrayOfMultiples(7, 5);
+            //Console.WriteLine($"Answer: {string.Join(",", evenArray)}");
 
             Console.ReadLine();
         }
 
-        static void CSharp8Playground()
+        private static void CSharp8Playground()
         {
             Console.WriteLine("C# 8 Practice in 3 2 1, GO!");
 
