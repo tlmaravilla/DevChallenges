@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace DevChallenges.Challenges
 {
@@ -23,19 +20,19 @@ namespace DevChallenges.Challenges
             All test cases contain valid numbers ranging from 1 to 3000.
          */
         public static int[] EliminateOddNbrsInArray(int[] numbers) => numbers.Where(x => x % 2 == 0).ToArray();
-       
-        /*
-       Create a function that takes a word and returns true if the word has two consecutive identical letters.
 
-       Examples
-           DoubleLetters("loop") ➞ true
-           DoubleLetters("yummy") ➞ true
-           DoubleLetters("orange") ➞ false
-           DoubleLetters("munchkin") ➞ false
-       */
+        /*
+           Create a function that takes a word and returns true if the word has two consecutive identical letters.
+
+           Examples
+               DoubleLetters("loop") ➞ true
+               DoubleLetters("yummy") ➞ true
+               DoubleLetters("orange") ➞ false
+               DoubleLetters("munchkin") ➞ false
+         */
         public static bool DoubleLetters(string msg)
         {
-            char lastChar = ' ';
+            var lastChar = ' ';
             foreach (var c in msg.ToCharArray())
             {
                 if (c == lastChar)
@@ -46,13 +43,34 @@ namespace DevChallenges.Challenges
             return false;
         }
 
+        //Create a function that removes the first and last characters from a string.
+        //Examples:
+        //    RemoveFirstLast("hello") ➞ "ell"
+        //    RemoveFirstLast("maybe") ➞ "ayb"
+        //    RemoveFirstLast("benefit") ➞ "enefi"
+        //    RemoveFirstLast("a") ➞ "a"
+        // * Notes If the string is 2 or fewer characters long, return the string itself(See example #4).
+        public static string RemoveStringFirstLastChar(string str)
+        {
+            if (str.Length <= 2)
+                return str;
+
+            // first try
+            //var firstRm = str.Remove(0, 1);
+            //return firstRm.Remove(firstRm.Length-1, 1);
+
+            // Now try it using substring
+            return str.Substring(1, str.Length - 2);
+
+        }
+
         /*
-        Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string.
-  
-        Examples
-          HackerSpeak("javascript is cool") ➞ "j4v45cr1pt 15 c00l"
-          HackerSpeak("programming is fun") ➞ "pr0gr4mm1ng 15 fun"
-          HackerSpeak("become a coder") ➞ "b3c0m3 4 c0d3r"
+            Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string.
+      
+            Examples
+              HackerSpeak("javascript is cool") ➞ "j4v45cr1pt 15 c00l"
+              HackerSpeak("programming is fun") ➞ "pr0gr4mm1ng 15 fun"
+              HackerSpeak("become a coder") ➞ "b3c0m3 4 c0d3r"
         */
         public static string HackerSpeak(string msg)
             => msg.ToLower().Replace("a", "4")
