@@ -1,13 +1,12 @@
-﻿using System;
-using System.Linq;
-using DevChallenges.Challenges;
+﻿using DevChallenges.Challenges;
 using DevChallenges.Sandbox;
+using System;
 
 namespace DevChallenges
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Dev Challenge in 3 2 1, GO!");
 
@@ -63,7 +62,7 @@ namespace DevChallenges
             Console.ReadLine();
         }
 
-        static void CSharp8Playground()
+        private static void CSharp8Playground()
         {
             Console.WriteLine("C# 8 Practice in 3 2 1, GO!");
 
